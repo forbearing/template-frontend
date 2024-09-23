@@ -54,6 +54,6 @@ export default {
     cdn: import.meta.env.VITE_CDN,
     mock: import.meta.env.VITE_MOCK,
     mockApi: import.meta.env.VITE_MOCK_API,
-    uploadApi: import.meta.env.VITE_UPLOAD_API
-  }
+    uploadApi: import.meta.env.VITE_UPLOAD_API,
+  },
 }

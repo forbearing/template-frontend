@@ -12,12 +12,12 @@ console.log(import.meta.env)
 const request = axios.create({
   baseURL: config.baseUrl,
   timeout: 60000,
-  timeoutErrorMessage: '请求超时, 请稍后再试'
+  timeoutErrorMessage: '请求超时, 请稍后再试',
   // withCredentials: true
 })
 
 request.interceptors.request.use(
-  config => {
+  (config) => {
     // console.log('config: ', config)
     // @ts-ignore
     if (config.showLoading) {
@@ -26,7 +26,7 @@ request.interceptors.request.use(
     }
     config.auth = {
       username: 'gUpZyIjPhK8gexafAZvY9VKkSAYs1D',
-      password: 'dYjiybelD2bPUOHAPFxsBzD8PKFa2j'
+      password: 'dYjiybelD2bPUOHAPFxsBzD8PKFa2j',
     }
     // const token: any = sessionStorage.getItem(TOKEN)
     // if (token) {
@@ -55,22 +55,22 @@ request.interceptors.request.use(
     // }
     return config
   },
-  err => {
+  (err) => {
     return Promise.reject(err)
-  }
+  },
 )
 
 request.interceptors.response.use(
-  resp => {
+  (resp) => {
     HideLoading()
     // NProgress.done()
     return resp
   },
-  err => {
+  (err) => {
     HideLoading()
     // NProgress.done()
     return Promise.reject(err)
-  }
+  },
 )
 
 export default request

@@ -75,10 +75,10 @@ export function CREATE<T>({ api, onSuccess, onFailure, onError, onFinished, opti
   const reload = config?.reload
   request
     .post(api, data, { params, ...(config as any) })
-    .then(res => {
+    .then((res) => {
       handleSuccess({ api, res, onSuccess, begin })
     })
-    .catch(err => {
+    .catch((err) => {
       handleFailure({ api, err, onFailure, onError, begin, reload })
     })
     .finally(() => onFinished && onFinished())
@@ -92,10 +92,10 @@ export function DELETE<T>({ api, onSuccess, onFailure, onError, onFinished, opti
   request
     // .delete(api + `?id=${id}`, { ...(config as any) })
     .delete(api, { data, params, ...(config as any) })
-    .then(res => {
+    .then((res) => {
       handleSuccess({ api, res, onSuccess, begin })
     })
-    .catch(err => {
+    .catch((err) => {
       handleFailure({ api, err, onFailure, onError, begin, reload })
     })
     .finally(() => onFinished && onFinished())
@@ -107,10 +107,10 @@ export function UPDATE<T>({ api, onSuccess, onFailure, onError, onFinished, opti
   const reload = config?.reload
   request
     .put(api, data, { params, ...(config as any) })
-    .then(res => {
+    .then((res) => {
       handleSuccess({ api, res, onSuccess, begin })
     })
-    .catch(err => {
+    .catch((err) => {
       handleFailure({ api, err, onFailure, onError, begin, reload })
     })
     .finally(() => onFinished && onFinished())
@@ -122,10 +122,10 @@ export function UPDATE_PARTIAL<T>({ api, onSuccess, onFailure, onError, onFinish
   const reload = config?.reload
   request
     .patch(api, data, { params, ...(config as any) })
-    .then(res => {
+    .then((res) => {
       handleSuccess({ api, res, onSuccess, begin })
     })
-    .catch(err => {
+    .catch((err) => {
       handleFailure({ api, err, onFailure, onError, begin, reload })
     })
     .finally(() => onFinished && onFinished())
@@ -140,10 +140,10 @@ export function LIST<T>({ api, onSuccess, onFailure, onError, onFinished, option
     // 注意: 如果 params 展开 { ...params } 则无法在 url 中加入 query parameters.
     // 则导致在请求后端数据的时,无法进行查询
     .get(api, { params, ...config })
-    .then(res => {
+    .then((res) => {
       handleSuccess({ api, res, onSuccess, begin })
     })
-    .catch(err => {
+    .catch((err) => {
       handleFailure({ api, err, onFailure, onError, begin, reload })
     })
     .finally(() => onFinished && onFinished())
@@ -157,10 +157,10 @@ export function GET<T>({ api, onSuccess, onFailure, onError, onFinished, options
   request
     // .get(`${api}/${id}`, { ...(config as any) })
     .get(api, { params, ...(config as any) })
-    .then(res => {
+    .then((res) => {
       handleSuccess({ api, res, onSuccess, begin })
     })
-    .catch(err => {
+    .catch((err) => {
       handleFailure({ api, err, onFailure, onError, begin, reload })
     })
     .finally(() => onFinished && onFinished())
@@ -170,7 +170,7 @@ function handleSuccess({
   api,
   res,
   onSuccess,
-  begin
+  begin,
 }: {
   api: string
   res: AxiosResponse<any, any>
@@ -196,7 +196,7 @@ function handleFailure({
   onFailure,
   onError,
   begin,
-  reload
+  reload,
 }: {
   api: string
   err: any

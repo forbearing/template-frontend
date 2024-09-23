@@ -9,7 +9,7 @@ export const userSlice = createSlice({
   name: 'user',
   initialState: {
     user: {},
-    url: ''
+    url: '',
   },
   reducers: {
     setUser(state, action) {
@@ -17,20 +17,20 @@ export const userSlice = createSlice({
     },
     setUrl(state, action) {
       state.url = action.payload
-    }
-  }
+    },
+  },
 })
 // tableSlice 用来保存表格的状态, 比如菜单管理页面中展开了哪些行.
 export const tableSlice = createSlice({
   name: 'table',
   initialState: {
-    menuExpandedRowKeys: [] // menu 页面中 table的展开项
+    menuExpandedRowKeys: [], // menu 页面中 table的展开项
   },
   reducers: {
     setMenuExpandedRowKeys(state, action) {
       state.menuExpandedRowKeys = action.payload
-    }
-  }
+    },
+  },
 })
 
 // layoutSlice 保存了整个页面的布局信息. 响应式布局需要用到这个.
@@ -46,7 +46,7 @@ export const layoutSlice = createSlice({
     collapsed: false,
     openKeys: [],
     pathname: '/',
-    fullscreen: 0 // 1 表示非全屏,2表示全屏
+    fullscreen: 0, // 1 表示非全屏,2表示全屏
   },
   reducers: {
     setWindow(state, action) {
@@ -84,26 +84,26 @@ export const layoutSlice = createSlice({
     },
     setExitFullscreen(state) {
       state.fullscreen = 1
-    }
-  }
+    },
+  },
 })
 
 const rootReducer = combineReducers({
   user: userSlice.reducer,
   layout: layoutSlice.reducer,
-  table: tableSlice.reducer
+  table: tableSlice.reducer,
 })
 
 export const store = configureStore({
   // reducer: rootReducer,
   reducer: persistReducer({ key: 'root', version: 1.2, storage }, rootReducer),
   // FIX: A non-serializable value was detected in an action
-  middleware: getDefaultMiddleware =>
+  middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({
       serializableCheck: {
-        ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER]
-      }
-    }).concat(logger, thunk) // includes default middleware
+        ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
+      },
+    }).concat(logger, thunk), // includes default middleware
   // }).concat(thunk) // includes default middleware
 })
 
