@@ -62,12 +62,17 @@ request.interceptors.request.use(
 
 request.interceptors.response.use(
   (resp) => {
-    HideLoading()
+    // @ts-ignore
+    if (resp.config.showLoading) {
+      HideLoading()
+    }
     // NProgress.done()
     return resp
   },
   (err) => {
-    HideLoading()
+    if (err.config && err.config.showLoading) {
+      HideLoading()
+    }
     // NProgress.done()
     return Promise.reject(err)
   },
