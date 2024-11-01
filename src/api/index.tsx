@@ -217,21 +217,21 @@ function handleFailure({
             if (reload === true) {
               location.href = `${PAGE_LOGIN}`
             } else {
-              onFailure && onFailure(err, err.response.status)
+              onFailure?.(err, err.response.status)
             }
             return
           case PAGE_LOGIN: // 如果本来就是 login 页面, 不要加 redirect
             if (reload === true) {
               location.href = `${PAGE_LOGIN}`
             } else {
-              onFailure && onFailure(err, err.response.status)
+              onFailure?.(err, err.response.status)
             }
             return
           default:
             if (reload == true) {
               location.href = `${PAGE_LOGIN}?redirect=${window.location.pathname}`
             } else {
-              onFailure && onFailure(err, err.response.status)
+              onFailure?.(err, err.response.status)
             }
             return
         }
@@ -257,7 +257,7 @@ function handleFailure({
     console.error(`[${api}]: `, err)
     // 服务端可能挂了, 没有 err.response 了
     // 此时没有 err.response.status 属性
-    onError && onError(err)
+    onError?.(err)
     return
   }
   if (onFailure) {

@@ -6,8 +6,8 @@ import './index.scss'
 // https://blog.csdn.net/hangGe0111/article/details/81981330 判断上下滚动
 
 // @ts-ignore
-let ids: (NodeJS.Timeout | undefined)[] = []
-let elements: Element[] = []
+const ids: (NodeJS.Timeout | undefined)[] = []
+const elements: Element[] = []
 const listeners: any[] = []
 
 const showScroll = (idx: number) => {
