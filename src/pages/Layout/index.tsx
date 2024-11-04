@@ -1,5 +1,5 @@
-import AutoHiddenScrollbar from 'components/AutoHiddenScrollbar'
-import AutoLoading from 'components/AutoLoading'
+import AutoHiddenScrollbar from '@/components/AutoHiddenScrollbar'
+import AutoLoading from '@/components/AutoLoading'
 import { Outlet } from 'react-router-dom'
 
 export default () => {
