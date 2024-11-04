@@ -3,7 +3,7 @@
 // import { BallTriangle, DNA, InfinitySpin, LineWave, MutatingDots } from 'react-loader-spinner'
 import './index.scss'
 
-const AutoLoading: React.FC<{ children?: any }> = ({ children }) => {
+export const AutoLoading: React.FC<{ children?: any }> = ({ children }) => {
   if (!children) {
     return <></>
   }
@@ -52,5 +52,3 @@ const AutoLoading: React.FC<{ children?: any }> = ({ children }) => {
     </>
   )
 }
-
-export default AutoLoading

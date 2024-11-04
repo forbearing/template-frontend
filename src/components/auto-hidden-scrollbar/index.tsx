@@ -54,7 +54,7 @@ const scrolling = (idx: number) => {
 //
 // classList: 需要自动隐藏滚动条的组件的 class name. class name 格式为 ".xxxx".
 // delay 延迟寻找组件, 有些组件并不会第一时间渲染完全出来, 比如 ant-design Table 组件,
-const AutoHiddenScrollbar: React.FC<{ children: any; classList?: string[]; delay?: number }> = ({
+export const AutoHiddenScrollbar: React.FC<{ children: any; classList?: string[]; delay?: number }> = ({
   children,
   classList,
   delay = 1000,
@@ -114,5 +114,3 @@ const AutoHiddenScrollbar: React.FC<{ children: any; classList?: string[]; delay
   }, [children])
   return <>{children}</>
 }
-
-export default AutoHiddenScrollbar
