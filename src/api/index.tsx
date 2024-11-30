@@ -1,9 +1,9 @@
 import { AxiosResponse } from 'axios'
 import dayjs from 'dayjs'
 import duration from 'dayjs/plugin/duration'
-import { PAGE_LOGIN } from 'types/page'
-import { TOKEN } from 'types/const'
-import request from 'utils/request'
+import { PAGE_LOGIN } from '@/types/page'
+import { TOKEN } from '@/types/const'
+import request from '@/utils/request'
 dayjs.extend(duration)
 
 // 分页触发方式

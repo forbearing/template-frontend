@@ -1,5 +1,5 @@
 import axios from 'axios'
-import config from 'config'
+import config from '@/config'
 import { HideLoading, ShowLoading } from './loading'
 import Cookies from 'js-cookie'
 const SESSION_ID = 'session_id'

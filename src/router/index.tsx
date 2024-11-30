@@ -1,5 +1,5 @@
-import Home from '@/pages/Home'
-import Layout from '@/pages/Layout'
+import Home from '@/pages/home'
+import Layout from '@/pages/layout'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import { PAGE_HOME } from '@/types/page'
 
