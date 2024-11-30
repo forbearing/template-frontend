@@ -23,3 +23,8 @@ dist-ssr
 *.sln
 *.sw?
 *.bak
+
+# TypeScript cache
+*.tsbuildinfo
+tsconfig.app.tsbuildinfo
+tsconfig.node.tsbuildinfo
