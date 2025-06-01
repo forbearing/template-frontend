@@ -1,4 +1,2 @@
-const TOKEN = 'token'
-const SESSION_ID = 'session_id'
-
-export { TOKEN, SESSION_ID }
+export const TOKEN = 'token'
+export const SESSION_ID = 'session_id'
